@@ -17,27 +17,38 @@ public class ParentSearchResponse {
     @SerializedName("etag")
     @Expose
     private String etag;
-    @SerializedName("nextPageToken")
-    @Expose
-    private String nextPageToken;
-    @SerializedName("regionCode")
-    @Expose
-    private String regionCode;
-    @SerializedName("pageInfo")
-    @Expose
-    private PageInfo pageInfo;
     @SerializedName("items")
     @Expose
     private List<YTSearchResponse> items = null;
+    @SerializedName("nextPageToken")
+    @Expose
+    private String nextPageToken;
+    @SerializedName("pageInfo")
+    @Expose
+    private PageInfo pageInfo;
 
-    public ParentSearchResponse(String kind, String etag, String nextPageToken, String regionCode, PageInfo pageInfo, List<YTSearchResponse> items) {
+    /**
+     * No args constructor for use in serialization
+     *
+     */
+    public ParentSearchResponse() {
+    }
+
+    /**
+     *
+     * @param kind
+     * @param nextPageToken
+     * @param pageInfo
+     * @param etag
+     * @param items
+     */
+    public ParentSearchResponse(String kind, String etag, List<YTSearchResponse> items, String nextPageToken, PageInfo pageInfo) {
         super();
         this.kind = kind;
         this.etag = etag;
-        this.nextPageToken = nextPageToken;
-        this.regionCode = regionCode;
-        this.pageInfo = pageInfo;
         this.items = items;
+        this.nextPageToken = nextPageToken;
+        this.pageInfo = pageInfo;
     }
 
     public String getKind() {
@@ -56,6 +67,14 @@ public class ParentSearchResponse {
         this.etag = etag;
     }
 
+    public List<YTSearchResponse> getItems() {
+        return items;
+    }
+
+    public void setItems(List<YTSearchResponse> items) {
+        this.items = items;
+    }
+
     public String getNextPageToken() {
         return nextPageToken;
     }
@@ -64,28 +83,12 @@ public class ParentSearchResponse {
         this.nextPageToken = nextPageToken;
     }
 
-    public String getRegionCode() {
-        return regionCode;
-    }
-
-    public void setRegionCode(String regionCode) {
-        this.regionCode = regionCode;
-    }
-
     public PageInfo getPageInfo() {
         return pageInfo;
     }
 
     public void setPageInfo(PageInfo pageInfo) {
         this.pageInfo = pageInfo;
-    }
-
-    public List<YTSearchResponse> getItems() {
-        return items;
-    }
-
-    public void setItems(List<YTSearchResponse> items) {
-        this.items = items;
     }
 
 }

@@ -3,6 +3,8 @@ package com.example.ytrebuild.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Snippet {
 
     @SerializedName("publishedAt")
@@ -23,14 +25,44 @@ public class Snippet {
     @SerializedName("channelTitle")
     @Expose
     private String channelTitle;
+    @SerializedName("tags")
+    @Expose
+    private List<String> tags = null;
+    @SerializedName("categoryId")
+    @Expose
+    private String categoryId;
     @SerializedName("liveBroadcastContent")
     @Expose
     private String liveBroadcastContent;
-    @SerializedName("publishTime")
+    @SerializedName("localized")
     @Expose
-    private String publishTime;
+    private Localized localized;
+    @SerializedName("defaultAudioLanguage")
+    @Expose
+    private String defaultAudioLanguage;
 
-    public Snippet(String publishedAt, String channelId, String title, String description, Thumbnails thumbnails, String channelTitle, String liveBroadcastContent, String publishTime) {
+    /**
+     * No args constructor for use in serialization
+     *
+     */
+    public Snippet() {
+    }
+
+    /**
+     *
+     * @param publishedAt
+     * @param defaultAudioLanguage
+     * @param localized
+     * @param description
+     * @param title
+     * @param thumbnails
+     * @param channelId
+     * @param categoryId
+     * @param channelTitle
+     * @param tags
+     * @param liveBroadcastContent
+     */
+    public Snippet(String publishedAt, String channelId, String title, String description, Thumbnails thumbnails, String channelTitle, List<String> tags, String categoryId, String liveBroadcastContent, Localized localized, String defaultAudioLanguage) {
         super();
         this.publishedAt = publishedAt;
         this.channelId = channelId;
@@ -38,8 +70,11 @@ public class Snippet {
         this.description = description;
         this.thumbnails = thumbnails;
         this.channelTitle = channelTitle;
+        this.tags = tags;
+        this.categoryId = categoryId;
         this.liveBroadcastContent = liveBroadcastContent;
-        this.publishTime = publishTime;
+        this.localized = localized;
+        this.defaultAudioLanguage = defaultAudioLanguage;
     }
 
     public String getPublishedAt() {
@@ -90,6 +125,22 @@ public class Snippet {
         this.channelTitle = channelTitle;
     }
 
+    public List<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<String> tags) {
+        this.tags = tags;
+    }
+
+    public String getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(String categoryId) {
+        this.categoryId = categoryId;
+    }
+
     public String getLiveBroadcastContent() {
         return liveBroadcastContent;
     }
@@ -98,12 +149,20 @@ public class Snippet {
         this.liveBroadcastContent = liveBroadcastContent;
     }
 
-    public String getPublishTime() {
-        return publishTime;
+    public Localized getLocalized() {
+        return localized;
     }
 
-    public void setPublishTime(String publishTime) {
-        this.publishTime = publishTime;
+    public void setLocalized(Localized localized) {
+        this.localized = localized;
+    }
+
+    public String getDefaultAudioLanguage() {
+        return defaultAudioLanguage;
+    }
+
+    public void setDefaultAudioLanguage(String defaultAudioLanguage) {
+        this.defaultAudioLanguage = defaultAudioLanguage;
     }
 
 }

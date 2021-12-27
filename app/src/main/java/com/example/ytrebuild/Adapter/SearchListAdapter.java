@@ -4,11 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.ytrebuild.R;
 import com.example.ytrebuild.Response.YTSearchResponse;
 
@@ -33,7 +35,8 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.Vi
 
     @Override
     public void onBindViewHolder(@NonNull SearchListAdapter.ViewHolder holder, int position) {
-        holder.vidId.setText("YT Channel: "+ ytResList.get(position).getSnippet().getChannelTitle());
+        holder.vidTitle.setText(ytResList.get(position).getSnippet().getTitle());
+        Glide.with(context.getApplicationContext()).load(ytResList.get(position).getSnippet().getThumbnails().getHigh().getUrl()).into(holder.vidThumb);
 
     }
 
@@ -44,11 +47,13 @@ public class SearchListAdapter extends RecyclerView.Adapter<SearchListAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        TextView vidId;
+        TextView vidTitle;
+        ImageView vidThumb;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            vidId = itemView.findViewById(R.id.videoIdText);
+            vidTitle = itemView.findViewById(R.id.videoIdText);
+            vidThumb = itemView.findViewById(R.id.thumbImg);
         }
     }
 }

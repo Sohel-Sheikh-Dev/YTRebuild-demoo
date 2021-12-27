@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/layout/activity_main.xml" value="0.209375" />
+        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/drawable/cust_btb.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/drawable/cust_btn.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/drawable/more_horz.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/layout/video_id_item.xml" value="0.33" />
       </map>
     </option>

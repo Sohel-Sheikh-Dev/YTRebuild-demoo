@@ -5,6 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class Medium {
 
+
     @SerializedName("url")
     @Expose
     private String url;
@@ -17,12 +18,11 @@ public class Medium {
 
     /**
      * No args constructor for use in serialization
-     *
      */
-
+    public Medium() {
+    }
 
     /**
-     *
      * @param width
      * @param url
      * @param height
@@ -57,5 +57,6 @@ public class Medium {
     public void setHeight(Integer height) {
         this.height = height;
     }
+
 
 }

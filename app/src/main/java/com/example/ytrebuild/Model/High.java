@@ -19,7 +19,8 @@ public class High {
      * No args constructor for use in serialization
      *
      */
-
+    public High() {
+    }
 
     /**
      *
@@ -57,5 +58,6 @@ public class High {
     public void setHeight(Integer height) {
         this.height = height;
     }
+
 
 }

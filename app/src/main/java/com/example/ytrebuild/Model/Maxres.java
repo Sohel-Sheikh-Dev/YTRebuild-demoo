@@ -3,7 +3,7 @@ package com.example.ytrebuild.Model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Default {
+public class Maxres {
 
     @SerializedName("url")
     @Expose
@@ -19,7 +19,7 @@ public class Default {
      * No args constructor for use in serialization
      *
      */
-    public Default() {
+    public Maxres() {
     }
 
     /**
@@ -28,7 +28,7 @@ public class Default {
      * @param url
      * @param height
      */
-    public Default(String url, Integer width, Integer height) {
+    public Maxres(String url, Integer width, Integer height) {
         super();
         this.url = url;
         this.width = width;
