@@ -5,14 +5,18 @@
       <map>
         <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/drawable/cust_btb.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/drawable/cust_btn.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/drawable/layer_white_bg.xml" value="0.23958333333333334" />
         <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/drawable/more_horz.xml" value="0.23958333333333334" />
-        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/layout/video_id_item.xml" value="0.33" />
+        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/layout-v23/video_id_item.xml" value="0.33" />
+        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/layout/shorts_item.xml" value="0.5" />
+        <entry key="..\:/Users/sohel/AndroidStudioProjects/YTRebuild/app/src/main/res/layout/video_id_item.xml" value="0.5" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_7" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

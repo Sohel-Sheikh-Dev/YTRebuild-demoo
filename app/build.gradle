@@ -47,4 +47,11 @@ dependencies {
 
     //Fresco
     implementation 'com.facebook.fresco:fresco:2.6.0'
+
+    //Blurkit
+    implementation 'io.alterac.blurkit:blurkit:1.1.0'
+
+    //Blur View
+    implementation 'com.eightbitlab:blurview:1.5.0'
+
 }
