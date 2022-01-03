@@ -20,12 +20,6 @@ public class YTSearchResponse {
     @SerializedName("snippet")
     @Expose
     private Snippet snippet;
-    @SerializedName("contentDetails")
-    @Expose
-    private ContentDetails contentDetails;
-    @SerializedName("statistics")
-    @Expose
-    private Statistics statistics;
 
     /**
      * No args constructor for use in serialization
@@ -38,17 +32,14 @@ public class YTSearchResponse {
      * @param kind
      * @param etag
      * @param id
-     * @param contentDetails
-     * @param statistics
      */
-    public YTSearchResponse(String kind, String etag, String id, Snippet snippet, ContentDetails contentDetails, Statistics statistics) {
+    public YTSearchResponse(String kind, String etag, String id, Snippet snippet) {
         super();
         this.kind = kind;
         this.etag = etag;
         this.id = id;
         this.snippet = snippet;
-        this.contentDetails = contentDetails;
-        this.statistics = statistics;
+
     }
 
     public String getKind() {
@@ -83,21 +74,6 @@ public class YTSearchResponse {
         this.snippet = snippet;
     }
 
-    public ContentDetails getContentDetails() {
-        return contentDetails;
-    }
-
-    public void setContentDetails(ContentDetails contentDetails) {
-        this.contentDetails = contentDetails;
-    }
-
-    public Statistics getStatistics() {
-        return statistics;
-    }
-
-    public void setStatistics(Statistics statistics) {
-        this.statistics = statistics;
-    }
 
 
 }

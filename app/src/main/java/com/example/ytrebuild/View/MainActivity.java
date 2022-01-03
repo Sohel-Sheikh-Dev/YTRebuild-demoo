@@ -54,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
         int[] categories = {1, 2, 10, 15, 17, 19, 20, 22, 23, 24, 25, 26, 27, 28, 29};
 
+        getSearchResp();
         getVideoIdYT();
 //        for (int i : categories) {
 //            getPopVidYT(10);
@@ -93,6 +94,30 @@ public class MainActivity extends AppCompatActivity {
 
         singleVideoIdList.setLayoutManager(singleLinearLayoutManager);
         singleVideoIdList.setAdapter(singleListAdapter);
+
+    }
+
+    private void getSearchResp() {
+        Call<ParentSearchResponse> data = RetrofitInstance.getRetrofitInstance().getSearchResponse();
+
+        data.enqueue(new Callback<ParentSearchResponse>() {
+            @Override
+            public void onResponse(Call<ParentSearchResponse> call, Response<ParentSearchResponse> response) {
+                if (response.isSuccessful()) {
+
+//                    ytRes.addAll(response.body().getItems());
+                    Toast.makeText(getApplicationContext(), ytRes.get(0).getSnippet().getTitle(), Toast.LENGTH_SHORT).show();
+//                    Collections.shuffle(ytRes);
+                    searchListAdapter.notifyDataSetChanged();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ParentSearchResponse> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "No Search Response", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

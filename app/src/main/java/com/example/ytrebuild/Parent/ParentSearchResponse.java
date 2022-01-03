@@ -26,6 +26,9 @@ public class ParentSearchResponse {
     @SerializedName("pageInfo")
     @Expose
     private PageInfo pageInfo;
+    @SerializedName("regionCode")
+    @Expose
+    private String regionCode;
 
     /**
      * No args constructor for use in serialization
@@ -35,20 +38,21 @@ public class ParentSearchResponse {
     }
 
     /**
-     *
+     * @param regionCode
      * @param kind
      * @param nextPageToken
      * @param pageInfo
      * @param etag
      * @param items
      */
-    public ParentSearchResponse(String kind, String etag, List<YTSearchResponse> items, String nextPageToken, PageInfo pageInfo) {
+    public ParentSearchResponse(String kind, String etag, String nextPageToken, String regionCode, PageInfo pageInfo, List<YTSearchResponse> items) {
         super();
         this.kind = kind;
         this.etag = etag;
-        this.items = items;
         this.nextPageToken = nextPageToken;
+        this.regionCode = regionCode;
         this.pageInfo = pageInfo;
+        this.items = items;
     }
 
     public String getKind() {
@@ -61,6 +65,14 @@ public class ParentSearchResponse {
 
     public String getEtag() {
         return etag;
+    }
+
+    public String getRegionCode() {
+        return regionCode;
+    }
+
+    public void setRegionCode(String regionCode) {
+        this.regionCode = regionCode;
     }
 
     public void setEtag(String etag) {

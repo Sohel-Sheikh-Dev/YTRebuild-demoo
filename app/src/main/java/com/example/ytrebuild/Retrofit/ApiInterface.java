@@ -13,6 +13,9 @@ public interface ApiInterface {
     @GET("videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&order=date&maxResults=1000&regionCode=IN&key=AIzaSyB4Gt0F2v2Zt9wLBFIU9nxvRIzR7L9OZAs")
     Call<ParentSearchResponse> getVideoDetails();
 
+    @GET("search?part=snippet&relatedToVideoId=Ks-_Mh1QhMc&type=video&key=AIzaSyB4Gt0F2v2Zt9wLBFIU9nxvRIzR7L9OZAs")
+    Call<ParentSearchResponse> getSearchResponse();
+
     @GET("videos?part=snippet&chart=mostPopular&order=views&maxResults=10&regionCode=IN&key=AIzaSyB4Gt0F2v2Zt9wLBFIU9nxvRIzR7L9OZAs")
     Call<ParentSearchResponse> getPopVids(@Query("videoCategoryId") int id);
 

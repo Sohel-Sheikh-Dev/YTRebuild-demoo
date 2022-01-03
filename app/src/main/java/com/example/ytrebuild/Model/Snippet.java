@@ -25,21 +25,15 @@ public class Snippet {
     @SerializedName("channelTitle")
     @Expose
     private String channelTitle;
-    @SerializedName("tags")
-    @Expose
-    private List<String> tags = null;
-    @SerializedName("categoryId")
-    @Expose
-    private String categoryId;
+
+
     @SerializedName("liveBroadcastContent")
     @Expose
     private String liveBroadcastContent;
-    @SerializedName("localized")
+
+    @SerializedName("publishTime")
     @Expose
-    private Localized localized;
-    @SerializedName("defaultAudioLanguage")
-    @Expose
-    private String defaultAudioLanguage;
+    private String publishTime;
 
     /**
      * No args constructor for use in serialization
@@ -62,7 +56,7 @@ public class Snippet {
      * @param tags
      * @param liveBroadcastContent
      */
-    public Snippet(String publishedAt, String channelId, String title, String description, Thumbnails thumbnails, String channelTitle, List<String> tags, String categoryId, String liveBroadcastContent, Localized localized, String defaultAudioLanguage) {
+    public Snippet(String publishedAt, String channelId, String title, String description, Thumbnails thumbnails, String channelTitle, String liveBroadcastContent) {
         super();
         this.publishedAt = publishedAt;
         this.channelId = channelId;
@@ -70,11 +64,9 @@ public class Snippet {
         this.description = description;
         this.thumbnails = thumbnails;
         this.channelTitle = channelTitle;
-        this.tags = tags;
-        this.categoryId = categoryId;
+
         this.liveBroadcastContent = liveBroadcastContent;
-        this.localized = localized;
-        this.defaultAudioLanguage = defaultAudioLanguage;
+
     }
 
     public String getPublishedAt() {
@@ -125,21 +117,6 @@ public class Snippet {
         this.channelTitle = channelTitle;
     }
 
-    public List<String> getTags() {
-        return tags;
-    }
-
-    public void setTags(List<String> tags) {
-        this.tags = tags;
-    }
-
-    public String getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
-    }
 
     public String getLiveBroadcastContent() {
         return liveBroadcastContent;
@@ -149,20 +126,5 @@ public class Snippet {
         this.liveBroadcastContent = liveBroadcastContent;
     }
 
-    public Localized getLocalized() {
-        return localized;
-    }
-
-    public void setLocalized(Localized localized) {
-        this.localized = localized;
-    }
-
-    public String getDefaultAudioLanguage() {
-        return defaultAudioLanguage;
-    }
-
-    public void setDefaultAudioLanguage(String defaultAudioLanguage) {
-        this.defaultAudioLanguage = defaultAudioLanguage;
-    }
 
 }
