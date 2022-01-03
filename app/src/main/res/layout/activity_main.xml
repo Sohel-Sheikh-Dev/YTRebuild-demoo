@@ -61,10 +61,16 @@
     </RelativeLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/firstSingleVid"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_below="@+id/searchAndAcc" />
+
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/shortsList"
         android:layout_width="match_parent"
         android:layout_height="300dp"
-        android:layout_below="@+id/searchAndAcc" />
+        android:layout_below="@+id/firstSingleVid" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/videoIdList"

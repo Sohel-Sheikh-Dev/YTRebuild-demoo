@@ -29,6 +29,7 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     List<YTSearchResponse> ytRes = new ArrayList<>();
+    List<YTSearchResponse> ytResFirst = new ArrayList<>();
 
     RecyclerView videoIdList;
     SearchListAdapter searchListAdapter;
@@ -36,8 +37,13 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView shortsList;
     ShortsAdapter shortsListAdapter;
 
+    RecyclerView singleVideoIdList;
+    SearchListAdapter singleListAdapter;
+
     LinearLayoutManager linearLayoutManagerVid;
     LinearLayoutManager linearLayoutManagerShorts;
+    LinearLayoutManager singleLinearLayoutManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +56,9 @@ public class MainActivity extends AppCompatActivity {
 
         getVideoIdYT();
 //        for (int i : categories) {
-//            getPopVidYT(i);
+//            getPopVidYT(10);
 //        }
+        getFirstVidYT(10);
         init();
 
     }
@@ -62,9 +69,12 @@ public class MainActivity extends AppCompatActivity {
 
         videoIdList = findViewById(R.id.videoIdList);
         shortsList = findViewById(R.id.shortsList);
+        singleVideoIdList = findViewById(R.id.firstSingleVid);
 
         searchListAdapter = new SearchListAdapter(getApplicationContext(), ytRes);
         shortsListAdapter = new ShortsAdapter(getApplicationContext());
+        singleListAdapter = new SearchListAdapter(getApplicationContext(), ytResFirst);
+
 
         linearLayoutManagerVid = new LinearLayoutManager(getApplicationContext());
         linearLayoutManagerVid.setOrientation(RecyclerView.VERTICAL);
@@ -72,11 +82,17 @@ public class MainActivity extends AppCompatActivity {
         linearLayoutManagerShorts = new LinearLayoutManager(getApplicationContext());
         linearLayoutManagerShorts.setOrientation(RecyclerView.HORIZONTAL);
 
+        singleLinearLayoutManager = new LinearLayoutManager(getApplicationContext());
+        singleLinearLayoutManager.setOrientation(RecyclerView.VERTICAL);
+
         videoIdList.setLayoutManager(linearLayoutManagerVid);
         videoIdList.setAdapter(searchListAdapter);
 
         shortsList.setLayoutManager(linearLayoutManagerShorts);
         shortsList.setAdapter(shortsListAdapter);
+
+        singleVideoIdList.setLayoutManager(singleLinearLayoutManager);
+        singleVideoIdList.setAdapter(singleListAdapter);
 
     }
 
@@ -89,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<ParentSearchResponse> call, Response<ParentSearchResponse> response) {
                 if (response.isSuccessful()) {
 
+//                    ytRes.addAll(response.body().getItems());
                     ytRes.addAll(response.body().getItems());
 //                    Collections.shuffle(ytRes);
                     searchListAdapter.notifyDataSetChanged();
@@ -127,5 +144,29 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+
+    private void getFirstVidYT(int id) {
+        Call<ParentSearchResponse> data = RetrofitInstance.getRetrofitInstance().getPopVids(id);
+
+        data.enqueue(new Callback<ParentSearchResponse>() {
+            @Override
+            public void onResponse(Call<ParentSearchResponse> call, Response<ParentSearchResponse> response) {
+                if (response.isSuccessful() && response != null) {
+
+                    ytResFirst.add(response.body().getItems().get(0));
+                    singleListAdapter.notifyDataSetChanged();
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ParentSearchResponse> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "No Response", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }
+
 
 }
